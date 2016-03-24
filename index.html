@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ABTest</title>
+<meta charset="utf-8">
+<meta name="description" content="decide your oshimen !">
+<meta name="author" content="Hiraki Noriaki">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	.main {
+		float:center;
+	}
+
+	.divA {
+		float:left;
+	}
+	.divB {
+		float:left;
+	}
+</style>
+<!--&#91;if lt IE 9&#93;>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<!&#91;endif&#93;-->
+</head>
+<body>
+<!-- Place your content here -->
+<div class="main">
+<h1 style="color:rgb(255,0,255)">Nogizaka AB Test</h1>
+<div class="divA">
+	<p><font color="red">A</font></p>
+	<img class="imageA" src="http://img.nogizaka46.com/www/member/img/ikomarina_prof.jpg"></img>
+</div>
+<div class="divB">
+	<p><font color="blue">B</font></p>
+	<img class="imageB" src="http://img.nogizaka46.com/www/member/img/ikutaerika_prof.jpg"></img>
+</div>
+</div>
+<!-- SCRIPTS -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+	$(".imageA").click( function() {
+		$(".imageB").attr("src", "http://img.nogizaka46.com/www/member/img/akimotomanatsu_prof.jpg");
+	});
+	$("imageB").click( function() {
+		$("imageA").attr("src", "http://img.nogizaka46.com/www/member/img/watanabemiria_prof.jpg");
+	}
+</script>
+</body>
+</html>
