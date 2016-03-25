@@ -30,21 +30,58 @@
 <h1 style="color:rgb(255,0,255)">Nogizaka AB Test</h1>
 <div class="divA">
 	<p><font color="red">A</font></p>
-	<img class="imageA" src="http://img.nogizaka46.com/www/member/img/ikomarina_prof.jpg"></img>
+	<img class="imageA"></img>
 </div>
 <div class="divB">
 	<p><font color="blue">B</font></p>
-	<img class="imageB" src="http://img.nogizaka46.com/www/member/img/ikutaerika_prof.jpg"></img>
+	<img class="imageB"></img>
 </div>
 </div>
 <!-- SCRIPTS -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
+	var member = ['ikomarina',
+								'akimotomanatsu',
+								'hukagawamai',
+								'nishinonanase',
+								'shiraishimai',
+								'ikutaerika',
+								'itoumarika',
+								'inouesayuri',
+								'etoumisa',
+								'saitouasuka',
+								'sakuraireika',
+								'takayamakazumi',
+								'hashimotonanami',
+								'hoshinominami',
+								'horimiona',
+								'matsumurasayuri',
+								'wakatsukiyumi',
+								];
+	var len = member.length;
+
+	var rndA = Math.floor(Math.random()*len);
+	var rndB = Math.floor(Math.random()*len);
+	$(".imageA").attr("src", "./image/" + member[rndA] + ".jpg");
+	$(".imageB").attr("src", "./image/" + member[rndB] + ".jpg");
+
 	$(".imageA").click( function() {
-		$(".imageB").attr("src", "http://img.nogizaka46.com/www/member/img/akimotomanatsu_prof.jpg");
+		setImageB();
 	});
-	$("imageB").click( function() {
-		$("imageA").attr("src", "http://img.nogizaka46.com/www/member/img/watanabemiria_prof.jpg");
+	$(".imageB").click( function() {
+		var imageB = $(".imageB").attr("src");
+		$(".imageA").attr("src", imageB);
+		setImageB();	
+	});
+
+	var setImageB = function(){
+		var randB = Math.floor(Math.random()*len);
+		var imageB = $(".imageB").attr("src");
+	/*	if(imageB.indexOf(member[randB]) == -1) {
+			randB = 
+		}*/
+		var url = "./image/" + member[randB] + ".jpg";
+		$(".imageB").attr("src", url);
 	}
 </script>
 </body>
